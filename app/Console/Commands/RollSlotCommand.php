@@ -34,7 +34,7 @@ class RollSlotCommand extends Command
 
         $paylines = $this->transfromPaylines($paylines);
 
-        $this->line("board:" . collect($board)->toJson());
+        $this->line("board:" . collect($array)->flatten()->toJson());
         $this->line("paylines: {$paylines}");
         $this->line("bet_amount: {$bet}");
         $this->line("total_win: {$totalWin}");
