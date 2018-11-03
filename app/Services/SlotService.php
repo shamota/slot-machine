@@ -83,9 +83,8 @@ class SlotService
         $result = collect();
         foreach (self::PAYLINES as $payline) {
             $consecutive = 1;
-            $symbol = $board[$payline[0]];
             for ($i = 1; $i < count($payline); $i++) {
-                if ($board[$payline[$i]] == $symbol) {
+                if ($board[$payline[$i]] === $board[$payline[$i - 1]]) {
                     $consecutive++;
                 }
             }
